@@ -3,6 +3,14 @@ import fs from 'fs-extra';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
+    // disable auto import
+    imports: {
+        autoImport: false
+    },
+    // disable auto import in components folder
+    components: {
+        dirs: []
+    },
     hooks: {
         'close': () => {
             fs.copy('./CNAME', './dist/CNAME')
